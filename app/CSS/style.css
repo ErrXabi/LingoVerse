@@ -1,0 +1,76 @@
+:root {
+    --primary-color: #22466B;
+    --secondary-color: #316DBC;
+    --tertiary-color: #4ECDC4;
+    --contrast-color: #F0F0F0;
+    --accent-color: #E2574A;
+    --secondary-accent-color: #F3A83B;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: var(--contrast-color);
+}
+header {
+    background-color: var(--primary-color);
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header img {
+    width: 50%;
+    height: 100%;
+}
+nav {
+    background-color: var(--secondary-color);
+    color: var(--contrast-color);
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    gap: 30px;
+    height: 50px;
+}
+nav ul li {
+    width: 70px;
+    background-color: var(--tertiary-color);
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+}
+a {
+    text-decoration: none;
+    color: var(--contrast-color);
+}
+nav ul li:first-child {
+    background-color: var(--accent-color);
+}
+main {
+    background-color: var(--contrast-color);
+}
+.letra {
+    width: 60px;
+    height: 55px;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    color: var(--contrast-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+}
+#letras {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(5, 1fr);
+    position: absolute;
+    margin-top: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: var(--contrast-color);
+}
