@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
 :root {
     --primary-color: #22466B;
     --secondary-color: #316DBC;
@@ -9,9 +11,13 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 body {
     background-color: var(--contrast-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 header {
     background-color: var(--primary-color);
@@ -34,7 +40,7 @@ nav ul {
     align-items: center;
     list-style-type: none;
     gap: 30px;
-    height: 50px;
+    height: 55px;
 }
 nav ul li {
     width: 70px;
@@ -42,6 +48,10 @@ nav ul li {
     border-radius: 5px;
     padding: 5px;
     text-align: center;
+}
+nav ul li:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
 }
 a {
     text-decoration: none;
@@ -52,25 +62,56 @@ nav ul li:first-child {
 }
 main {
     background-color: var(--contrast-color);
+    flex: 1;
+}
+footer {
+    background: var(--primary-color);
+    color: var(--contrast-color);
+    text-align: center;
+    padding: 20px;
 }
 .letra {
-    width: 60px;
-    height: 55px;
+    width: 55px;
+    height: 50px;
     border-radius: 10px;
     background-color: var(--primary-color);
     color: var(--contrast-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 35px;
+    font-size: 28px;
 }
 #letras {
     display: grid;
     gap: 0.5rem;
-    grid-template-columns: repeat(5, 1fr);
-    position: absolute;
-    margin-top: 10px;
-    left: 50%;
-    transform: translate(-50%);
+    grid-template-columns: repeat(5, 60px);
+    margin: 20px;
     background-color: var(--contrast-color);
+    justify-content: center;
+    align-items: center;
+}
+#contenedorTeclado {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    padding: 1.2rem;
+}
+.fila-teclado {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+.tecla {
+    padding: 10px;
+    border: 1px solid black;
+    background-color: var(--secondary-color);
+    color: var(--contrast-color);
+    border-radius: 6px;
+    font-size: 15px;
+    transition: background 0.25s;
+}
+.tecla:hover {
+    background-color: #73a7eb;
 }
