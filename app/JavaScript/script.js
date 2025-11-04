@@ -1,6 +1,8 @@
-generarPalabra();
+document.addEventListener("DOMContentLoaded", () => {
+    generarPalabra();
+})
 
-let filas = 6;
+let filas = 5;
 let columnas = 5;
 let sHTML = "";
 for (let i = 0; i < filas; i++) {
@@ -21,7 +23,7 @@ const filasTeclado = [
 let tecladoHTML = "";
 
 for (let fila of filasTeclado) {
-    tecladoHTML += `<div class="fila-teclado">`;
+    tecladoHTML += `<div class="filaTeclado">`;
     for (let letra of fila) {
         tecladoHTML += `<button class="tecla" onclick="mover('${letra}')">${letra}</button>`;
     }

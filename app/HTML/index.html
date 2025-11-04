@@ -11,16 +11,40 @@
 <body>
     <header>
         <img src="..\img\logo.png" alt="logo">
+        <nav class="nav-header">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="perfil.html">Perfil</a></li>
+                <li><a href="ranking.html">Ranking</a></li>
+                <li><a href="acceder.html">Acceder</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
+    <nav class="nav-main">
         <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="perfil.html">Perfil</a></li>
             <li><a href="ranking.html">Ranking</a></li>
+            <li><a href="acceder.html">Acceder</a></li>
         </ul>
     </nav>
     <main>
-        <div id="letras"></div>
+        <div class="juego">
+            <div id="letras"></div>
+            <aside>
+                <h3 class="tiempo">Tiempo restante: 0s</h3>
+                <h3>Instrucciones:</h3>
+                <li>
+                    <b><span class="verde">Verde</span> = La letra está en la posición correcta
+                </li>
+                <li>
+                    <b><span class="naranja">Naranja</span> = La letra está en otra posición</b>
+                </li>
+                <li>
+                    <b><span class="rojo">Rojo</span> = La letra no existe</b>
+                </li>
+            </aside>
+        </div>
         <div id="contenedorTeclado"></div>
         <script src="../JavaScript/script.js"></script>
     </main>
