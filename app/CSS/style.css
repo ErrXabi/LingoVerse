@@ -64,12 +64,6 @@ main {
     background-color: var(--contrast-color);
     flex: 1;
 }
-footer {
-    background: var(--primary-color);
-    color: var(--contrast-color);
-    text-align: center;
-    padding: 20px;
-}
 .letra {
     width: 55px;
     height: 50px;
@@ -93,7 +87,7 @@ footer {
 #contenedorTeclado {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 7px;
     background-color: var(--primary-color);
     border-radius: 10px;
     padding: 1.2rem;
@@ -101,11 +95,11 @@ footer {
 .fila-teclado {
     display: flex;
     justify-content: center;
-    gap: 5px;
+    gap: 7px;
 }
 .tecla {
     padding: 10px;
-    border: 1px solid black;
+    border: 0;
     background-color: var(--secondary-color);
     color: var(--contrast-color);
     border-radius: 6px;
@@ -114,4 +108,10 @@ footer {
 }
 .tecla:hover {
     background-color: #73a7eb;
+}
+footer {
+    background: var(--primary-color);
+    color: var(--contrast-color);
+    text-align: center;
+    padding: 20px;
 }
