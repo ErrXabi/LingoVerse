@@ -1,6 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
     generarPalabra();
+    contadorFila();
 })
+
+let relojFila = 30;
+let relojTotal = 0;
+let reloj;
 
 let filas = 5;
 let columnas = 5;
@@ -76,13 +81,12 @@ async function comprobar() {
         }
     }
     if (intento == secreta) {
-        let teclas = document.querySelectorAll(".tecla");
-        teclas.forEach(tecla => {
-            tecla.disabled = true;
-        });
+        pararContador();
+        document.getElementById("tiempoFila").innerHTML = `¡Enhorabuena! Has necesitado ${relojTotal}s`;
     }
     columnaActual = 0;
     filaActual++;
+    relojFila = 30;
     intento = "";
 }
 
@@ -98,4 +102,31 @@ async function generarPalabra() {
     } catch (error) {
         console.log("Error en la petición: " , error);
     }
+}
+
+function contadorFila() {
+    reloj = setInterval(() => {
+        relojFila--;
+        relojTotal++;
+        document.getElementById("tiempoFila").innerHTML = `Tiempo restante para completar la fila: ${relojFila}s`;
+        if (relojFila <= 0) {
+            if (filaActual >= filas-1) {
+                pararContador();
+                document.getElementById("tiempoFila").innerHTML = `No has conseguido advinar la palabra. Era: ${secreta}`;
+            }
+            else {
+                columnaActual = 0;
+                filaActual++;
+                relojFila = 30;
+            }
+        }
+    }, 1000);
+}
+
+function pararContador() {
+    clearInterval(reloj);
+    let teclas = document.querySelectorAll(".tecla");
+        teclas.forEach(tecla => {
+            tecla.disabled = true;
+    });
 }

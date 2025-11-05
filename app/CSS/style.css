@@ -66,11 +66,17 @@ nav ul li:first-child {
 }
 main {
     background-color: var(--contrast-color);
-    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin: 20px 0;
+}
+.juego {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .letra {
     width: 55px;
@@ -93,7 +99,7 @@ main {
 #contenedorTeclado {
     display: flex;
     flex-direction: column;
-    gap: 7px;
+    gap: 10px;
     background-color: var(--primary-color);
     border-radius: 10px;
     padding: 1.2rem;
@@ -102,7 +108,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 7px;
+    gap: 10px;
 }
 .tecla {
     padding: 10px;
@@ -158,10 +164,10 @@ aside .rojo {
     .nav-header {
         display: block;
         background-color: var(--primary-color);
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
     nav ul li {
-        width: auto;
+        width: 100px;
     }
     #letras {
         gap: 2rem;
@@ -172,7 +178,7 @@ aside .rojo {
         height: 75px;
     }
     #contenedorTeclado {
-        width: 85%;
+        width: 640px;
         height: 165px;
         gap: 20px;
     }
@@ -185,6 +191,7 @@ aside .rojo {
         height: 40px;
     }
     footer {
+        margin-top: 20px;
         height: 60px;
         display: flex;
         justify-content: center;
@@ -214,11 +221,16 @@ aside .rojo {
         flex-direction: row;
         align-items: flex-start;
         justify-content: center;
-        gap: 30px;
         width: 100%;
     }
+    #contenedorTeclado {
+        width: 620px;
+    }
     aside {
-        width: auto;
+        width: 390px;
         margin: 35px;
+    }
+    footer {
+        font-size: 1.2rem;
     }
 }
