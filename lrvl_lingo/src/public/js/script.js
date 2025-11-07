@@ -97,6 +97,10 @@ async function comprobar() {
         alert("La palabra introducida no está en el diccionario. Has perdido un intento");
         columnaActual = 0;
         filaActual++;
+        if (filaActual >= filas) {
+            pararContador();
+            document.getElementById("tiempoFila").innerHTML = `Has agotado todos tus intentos. La palabra era: ${secreta}`;
+        }
         return;
     }
 
@@ -153,7 +157,6 @@ async function generarPalabra() {
         }
         const palabra = await response.json();
         secreta = palabra.diccionario.toUpperCase();
-        console.log(secreta);
     } catch (error) {
         console.log("Error en la petición: " , error);
     }
