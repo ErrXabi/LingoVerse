@@ -56,6 +56,6 @@
 
         <!--METER PAGINA INICIO LINGO AQUÍ-->
         <h1>Bienvenido a la página de inicio de Lingo</h1><br>
-        <img src="logo.png" alt="">
+        <img src="img/logo.png" alt="">
     </body>
 </html>

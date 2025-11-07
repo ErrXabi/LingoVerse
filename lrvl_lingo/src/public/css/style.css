@@ -122,7 +122,7 @@ main {
 .tecla:hover {
     background-color: #73a7eb;
     transform: scale(1.1);
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 footer {
     background: var(--primary-color);

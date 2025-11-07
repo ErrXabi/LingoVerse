@@ -12,7 +12,7 @@ Route::get('/palabras', [PalabraController::class, 'index'])->name('palabras.ind
 Route::get('/palabrasStyled', [PalabraController::class, 'indexStyled'])->name('palabras.indexStyled');
 Route::get('/palabrasBlade', [PalabraController::class, 'indexBlade'])->name('palabras.indexBlade');
 
-Route::get('/palabrasRandom/{cantidad?}', [PalabraController::class, 'indexRandom'])->name('palabras.indexRandomw');
+Route::get('/palabrasRandom/{cantidad}', [PalabraController::class, 'indexRandom'])->name('palabras.indexRandomw');
 
 //Ruta que verifica si la palabra dada en la ruta existe en la tabla 'palabras' y devuelve json
 Route::get('/verificarPalabra/{palabra}', [PalabraController::class, 'verificarPalabra'])

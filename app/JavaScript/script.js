@@ -55,6 +55,19 @@ function mover(letra) {
     }
 }
 
+document.addEventListener("keydown", (event) => {
+    let key = event.key.toUpperCase();
+
+    if (/^[A-ZÑ]$/.test(key)) {
+        mover(key);
+    }
+
+    if (key === "ENTER") {
+        if (columnaActual == columnas) {
+            comprobar();
+        }
+    }
+});
 
 let secreta = "";
 

@@ -12,19 +12,29 @@
         <img src="{{ asset('img/logo.png') }}" alt="logo">
         <nav class="nav-header">
             <ul>
-                <li><a href="index.html">Inicio</a></li>
+                <li><a href="{{ route('juego') }}">Inicio</a></li>
                 <li><a href="">Perfil</a></li>
                 <li><a href="">Ranking</a></li>
-                <li><a href="">Salir</a></li>
+                <li>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">Salir</a>
+                    </form>
+                </li>
             </ul>
         </nav>
     </header>
     <nav class="nav-main">
         <ul>
-            <li><a href="index.html">Inicio</a></li>
+            <li><a href="{{ route('juego') }}">Inicio</a></li>
             <li><a href="">Perfil</a></li>
             <li><a href="">Ranking</a></li>
-            <li><a href="">Salir</a></li>
+            <li>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">Salir</a>
+                </form>
+            </li>
         </ul>
     </nav>
     <main>

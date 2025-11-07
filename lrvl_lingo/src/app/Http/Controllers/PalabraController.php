@@ -30,15 +30,8 @@ class PalabraController extends Controller
 
     public function indexRandom($cantidad = 1)
     {
-        $palabras = Palabra::inRandomOrder()->take($cantidad)->get();   
-        return view('palabras.index', ['palabras' => $palabras ]);
-    }
-
-    public function verificarPalabra(String $palabra): JsonResponse
-    {
-        $existe = Palabra::where('palabra',$palabra)->exists();
-        return response()->json(['palabra_buscada' => $palabra,'existe' => $existe]);
-        //return view('palabras.verificar', ['existe' => $existe]);
+        $palabras = Palabra::inRandomOrder()->first();
+        return response()->json($palabras);
     }
 
     /**

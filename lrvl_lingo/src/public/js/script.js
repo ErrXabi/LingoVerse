@@ -55,6 +55,31 @@ function mover(letra) {
     }
 }
 
+document.addEventListener("keydown", (event) => {
+    let key = event.key.toUpperCase();
+
+    if (/^[A-ZÑ]$/.test(key)) {
+        mover(key);
+    }
+
+    if (key === "ENTER") {
+        if (columnaActual == columnas) {
+            comprobar();
+        }
+    }
+    if (key === "BACKSPACE") {
+        borrarLetra();
+    }
+});
+
+function borrarLetra() {
+    if (columnaActual > 0) {
+        columnaActual--;
+        let celda = document.getElementById(`letra${filaActual}${columnaActual}`);
+        celda.innerHTML = "";
+        intento = intento.slice(0, -1);
+    }
+}
 
 let secreta = "";
 
@@ -67,6 +92,14 @@ async function comprobar() {
     let arraySecreta = secreta.split('');
     let arrayIntento = intento.split('');
     
+    let palabraValida = await verificarDiccionario(arrayIntento);
+    if (!palabraValida) {
+        alert("La palabra introducida no está en el diccionario. Has perdido un intento");
+        columnaActual = 0;
+        filaActual++;
+        return;
+    }
+
     for (let i = 0; i < columnas; i++) {
         let celda = document.getElementById(`letra${filaActual}${i}`);
         celda.style.color = "white";
@@ -96,14 +129,30 @@ async function comprobar() {
     }
 }
 
+async function verificarDiccionario(arrayIntento) {
+    try {
+        arrayIntento = arrayIntento.join('').toLowerCase();
+        const response = await fetch(`http://185.60.43.155:3000/api/check/${arrayIntento}`);
+        if (!response.ok) {
+            throw new Error("Error en la API de verificación");
+        }
+        const data = await response.json();
+        return data.exists;
+    } catch (error) {
+        console.log("Error en la petición: ", error);
+        return false;
+    }
+}
+
+
 async function generarPalabra() {
     try {
-        const response = await fetch("http://185.60.43.155:3000/api/word/1");
+        const response = await fetch("/palabrasRandom/1");
         if (!response.ok) {
             throw new Error("Error al generar la palabra aleatoria: " + response.status);
         }
         const palabra = await response.json();
-        secreta = palabra.word.toUpperCase()
+        secreta = palabra.diccionario.toUpperCase();
         console.log(secreta);
     } catch (error) {
         console.log("Error en la petición: " , error);
