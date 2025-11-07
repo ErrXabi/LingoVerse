@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página principal - Lingo</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="shortcut icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
     
 </head>
 <body>
@@ -13,7 +14,7 @@
         <nav class="nav-header">
             <ul>
                 <li><a href="{{ route('juego') }}">Inicio</a></li>
-                <li><a href="">Ranking</a></li>
+                <li><a href="{{ route('ranking') }}">Ranking</a></li>
                 <li>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
@@ -26,7 +27,7 @@
     <nav class="nav-main">
         <ul>
             <li><a href="{{ route('juego') }}">Inicio</a></li>
-            <li><a href="">Ranking</a></li>
+            <li><a href="{{ route('ranking') }}">Ranking</a></li>
             <li>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf

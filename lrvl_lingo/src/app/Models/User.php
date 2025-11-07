@@ -21,6 +21,11 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'puntuacion',
+    ];
+
+    protected $attributes = [
+        'puntuacion' => 0,
     ];
 
     /**

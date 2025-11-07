@@ -61,12 +61,6 @@ document.addEventListener("keydown", (event) => {
     if (/^[A-ZÑ]$/.test(key)) {
         mover(key);
     }
-
-    if (key === "ENTER") {
-        if (columnaActual == columnas) {
-            comprobar();
-        }
-    }
     if (key === "BACKSPACE") {
         borrarLetra();
     }
@@ -143,7 +137,7 @@ async function verificarDiccionario(arrayIntento) {
         const data = await response.json();
         return data.exists;
     } catch (error) {
-        console.log("Error en la petición: ", error);
+        ("Error en la petición: ", error);
         return false;
     }
 }
