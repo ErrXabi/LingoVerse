@@ -13,7 +13,6 @@
         <nav class="nav-header">
             <ul>
                 <li><a href="{{ route('juego') }}">Inicio</a></li>
-                <li><a href="">Perfil</a></li>
                 <li><a href="">Ranking</a></li>
                 <li>
                     <form method="POST" action="{{ route('logout') }}">
@@ -27,7 +26,6 @@
     <nav class="nav-main">
         <ul>
             <li><a href="{{ route('juego') }}">Inicio</a></li>
-            <li><a href="">Perfil</a></li>
             <li><a href="">Ranking</a></li>
             <li>
                 <form method="POST" action="{{ route('logout') }}">
