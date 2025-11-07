@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página principal - Lingo</title>
-    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     
 </head>
 <body>
     <header>
-        <img src="..\img\logo.png" alt="logo">
+        <img src="{{ asset('img/logo.png') }}" alt="logo">
         <nav class="nav-header">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="">Perfil</a></li>
                 <li><a href="">Ranking</a></li>
-                <li><a href="">Acceder</a></li>
+                <li><a href="">Salir</a></li>
             </ul>
         </nav>
     </header>
@@ -25,7 +24,7 @@
             <li><a href="index.html">Inicio</a></li>
             <li><a href="">Perfil</a></li>
             <li><a href="">Ranking</a></li>
-            <li><a href="">Acceder</a></li>
+            <li><a href="">Salir</a></li>
         </ul>
     </nav>
     <main>
@@ -47,7 +46,7 @@
             </aside>
         </div>
         <div id="contenedorTeclado"></div>
-        <script src="../JavaScript/script.js"></script>
+        <script src="{{ asset('js/script.js') }}"></script>
     </main>
     <footer>
         <p>&copy; 2025 Lingo. Todos los derechos reservados.</p>
