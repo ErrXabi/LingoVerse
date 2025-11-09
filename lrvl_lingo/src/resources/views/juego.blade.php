@@ -18,7 +18,7 @@
                 <li>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">Salir</a>
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">Cerrar sesión</a>
                     </form>
                 </li>
             </ul>

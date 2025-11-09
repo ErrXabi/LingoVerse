@@ -64,6 +64,17 @@ a {
 nav ul li:first-child {
     background-color: var(--accent-color);
 }
+.iniciar-sesion, .registrar {
+    background-color: var(--tertiary-color);
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+.iniciar-sesion:hover, .registrar:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
 main {
     background-color: var(--contrast-color);
     display: flex;
@@ -147,7 +158,28 @@ aside .naranja {
 aside .rojo {
     color: var(--accent-color);
 }
-
+.bienvenida {
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+table {
+    margin: 35px;
+}
+th, td {
+    padding: 10px;
+    border-radius: 5px;
+}
+th {
+    background-color: var(--primary-color);
+    color: var(--contrast-color);
+}
+td {
+    border: 1px solid var(--primary-color);
+    text-align: center;
+}
 @media (min-width: 700px) {
     header img {
         max-width: 25%;
@@ -157,17 +189,18 @@ aside .rojo {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
+        padding: 0 5%;
     }
     .nav-main {
         display: none;
     }
     .nav-header {
         display: block;
-        background-color: var(--primary-color);
+        background-color: transparent;
         font-size: 1.3rem;
     }
     nav ul li {
-        width: 100px;
+        width: 130px;
     }
     #letras {
         gap: 1.2rem;
@@ -204,17 +237,18 @@ aside .rojo {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
+        padding: 0 10%;
     }
     .nav-main {
         display: none;
     }
     .nav-header {
         display: block;
-        background-color: var(--primary-color);
+        background-color: transparent;
         font-size: 1.2rem;
     }
     nav ul li {
-        width: 100px;
+        width: 130px;
     }
     .juego {
         display: flex;

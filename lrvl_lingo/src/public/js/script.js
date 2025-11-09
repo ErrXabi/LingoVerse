@@ -111,11 +111,15 @@ async function comprobar() {
             celda.style.backgroundColor = "#E2574A";
         }
     }
+
     if (intento == secreta) {
         pararContador();
-        document.getElementById("tiempoFila").innerHTML = `¡Enhorabuena! Has necesitado ${relojTotal}s`;
+        let puntuacion = Math.max(100, 1000 - (relojTotal) * 10);
+        document.getElementById("tiempoFila").innerHTML = `¡Enhorabuena! Has necesitado ${relojTotal}s. Y has ganado ${puntuacion}`;
+        fetch(`/actualizar-puntuacion/${puntuacion}`);
         return;
     }
+
     columnaActual = 0;
     filaActual++;
     relojFila = 30;
@@ -144,15 +148,23 @@ async function verificarDiccionario(arrayIntento) {
 
 
 async function generarPalabra() {
-    try {
-        const response = await fetch("/palabrasRandom/1");
-        if (!response.ok) {
-            throw new Error("Error al generar la palabra aleatoria: " + response.status);
+    let palabraValida = false;
+    while (!palabraValida) {
+        try {
+                const response = await fetch(`/palabrasRandom/1`);
+                if (!response.ok) {
+                    throw new Error("Error al generar la palabra aleatoria: " + response.status);
+                }
+                const palabra = await response.json();
+                secreta = palabra.diccionario.toUpperCase();
+
+                if (secreta.length == 5) {
+                    palabraValida = true;
+                }
+                console.log(secreta);
+        } catch (error) {
+            console.log("Error en la petición: " , error);
         }
-        const palabra = await response.json();
-        secreta = palabra.diccionario.toUpperCase();
-    } catch (error) {
-        console.log("Error en la petición: " , error);
     }
 }
 

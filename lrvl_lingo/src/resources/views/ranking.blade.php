@@ -3,12 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Ranking</title>
-    <link rel="stylesheet" href="{{ asset('css/ranking.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
-    <h1>🏆 Ranking de Jugadores</h1>
-
-    <table border="1" cellpadding="8" cellspacing="0">
+    <header>
+        <img src="{{ asset('img/logo.png') }}" alt="logo">
+        <nav class="nav-header">
+            <ul>
+                <li><a href="{{ route('juego') }}">Inicio</a></li>
+                <li><a href="{{ route('ranking') }}">Ranking</a></li>
+                <li>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">Cerrar sesión</a>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <nav class="nav-main">
+        <ul>
+            <li><a href="{{ route('juego') }}">Inicio</a></li>
+            <li><a href="{{ route('ranking') }}">Ranking</a></li>
+            <li>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">Salir</a>
+                </form>
+            </li>
+        </ul>
+    </nav>
+    <table>
         <thead>
             <tr>
                 <th>Posición</th>
@@ -21,12 +46,10 @@
                 <tr>
                     <td>{{ $index + 1 }}</td>
                     <td>{{ $user->name }}</td>
-                    <td>{{ $user->score }}</td>
+                    <td>{{ $user->puntuacion }}</td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-
-    <a href="{{ route('juego') }}">Volver al juego</a>
 </body>
 </html>
