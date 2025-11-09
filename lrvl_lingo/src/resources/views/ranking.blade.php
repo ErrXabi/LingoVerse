@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Ranking</title>
+    <title>Ranking - Lingo</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
@@ -51,5 +51,8 @@
             @endforeach
         </tbody>
     </table>
+    <footer>
+    <p>&copy; 2025 Lingo. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
