@@ -115,7 +115,7 @@ async function comprobar() {
     if (intento == secreta) {
         pararContador();
         let puntuacion = Math.max(100, 1000 - (relojTotal) * 10);
-        document.getElementById("tiempoFila").innerHTML = `¡Enhorabuena! Has necesitado ${relojTotal}s. Y has ganado ${puntuacion}`;
+        document.getElementById("tiempoFila").innerHTML = `¡Enhorabuena! Has necesitado ${relojTotal}s. Y has ganado ${puntuacion} puntos`;
         fetch(`/actualizar-puntuacion/${puntuacion}`);
         return;
     }
@@ -161,7 +161,6 @@ async function generarPalabra() {
                 if (secreta.length == 5) {
                     palabraValida = true;
                 }
-                console.log(secreta);
         } catch (error) {
             console.log("Error en la petición: " , error);
         }

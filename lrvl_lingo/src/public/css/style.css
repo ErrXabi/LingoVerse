@@ -61,7 +61,7 @@ a {
     text-decoration: none;
     color: var(--contrast-color);
 }
-nav ul li:first-child {
+nav ul li:last-child {
     background-color: var(--accent-color);
 }
 .iniciar-sesion, .registrar {
@@ -173,7 +173,7 @@ th, td {
     border-radius: 5px;
 }
 th {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: var(--contrast-color);
 }
 td {
