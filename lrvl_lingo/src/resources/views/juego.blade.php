@@ -57,5 +57,6 @@
         <div id="contenedorTeclado"></div>
         <script src="{{ asset('js/script.js') }}"></script>
     </main>
+    <footer><p>&copy; 2025 Lingo. Todos los derechos reservados.</p></footer>
 </body>
 </html>
