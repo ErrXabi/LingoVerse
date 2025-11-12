@@ -15,7 +15,7 @@
             <ul>
                 <li><a href="{{ route('juego') }}">Inicio</a></li>
                 <li><a href="{{ route('ranking') }}">Ranking</a></li>
-                <li>
+                <li> <!-- Cerrar sesión -->
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">Cerrar sesión</a>
@@ -28,7 +28,7 @@
         <ul>
             <li><a href="{{ route('juego') }}">Inicio</a></li>
             <li><a href="{{ route('ranking') }}">Ranking</a></li>
-            <li>
+            <li> <!-- Cerrar sesión -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">Salir</a>
@@ -57,5 +57,6 @@
         <div id="contenedorTeclado"></div>
         <script src="{{ asset('js/script.js') }}"></script>
     </main>
+    <footer><p>&copy; 2025 Lingo. Todos los derechos reservados.</p></footer>
 </body>
 </html>
